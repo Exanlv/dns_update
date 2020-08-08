@@ -26,8 +26,10 @@ const names = process.env.NAMES.split(',');
 		if (!data.length)
 			throw `DNS record with name '${name}' does not exist`;
 		
-		if (data[0].data === own_ip)
+		if (data[0].data === own_ip) {
+			console.log(`DNS record for ${name} is OK`);
 			return;
+		}
 
 		const res = await fetch(
 			`${godaddy_base_url}v1/domains/${process.env.DOMAIN}/records/A/${name}`,
@@ -50,5 +52,7 @@ const names = process.env.NAMES.split(',');
 
 			throw `Failed updating DNS record for '${name}'`;
 		}
+
+		console.log(`Updated DNS record for ${name}`);
 	});
 })();
