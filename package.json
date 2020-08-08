@@ -1,0 +1,15 @@
+{
+  "name": "dns_update",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@exan/envreader": "^1.0.4",
+    "node-fetch": "^2.6.0"
+  }
+}
